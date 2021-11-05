@@ -6,6 +6,10 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 
+# Custom plugins
+!web/app/mu-plugins/pantheon-decoupled-gatsby/
+!web/app/plugins/pantheon-decoupled/
+
 # WordPress
 web/wp
 web/.htaccess
@@ -23,3 +27,5 @@ web/.htaccess
 
 # WP-CLI
 wp-cli.local.yml
+
+.DS_Store
