@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "10336db8d44a1aaa0eb66ee91a608b60",
+    "content-hash": "5d4296187f01c80ca695155a0b109ac9",
     "packages": [
         {
             "name": "composer/installers",
@@ -493,6 +493,59 @@
                 "env"
             ],
             "time": "2020-06-11T10:59:27+00:00"
+        },
+        {
+            "name": "pantheon/pantheon-decoupled",
+            "version": "dev-DB-1043",
+            "dist": {
+                "type": "path",
+                "url": "web/app/plugins/pantheon-decoupled",
+                "reference": "42162c46e0fecd3838f39e633ee05ec9a0ae636d"
+            },
+            "require": {
+                "wpackagist-plugin/wp-graphql": "^1.0"
+            },
+            "type": "library",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Perry",
+                    "email": "brian.perry@pantheon.io"
+                }
+            ],
+            "description": "Configuration necessary for hosting Decoupled WordPress sites on Pantheon.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "pantheon/pantheon-decoupled-gatsby",
+            "version": "dev-DB-1043",
+            "dist": {
+                "type": "path",
+                "url": "web/app/mu-plugins/pantheon-decoupled-gatsby",
+                "reference": "50af9f8dbaf79798d6c7bdbf00365903d0389ddd"
+            },
+            "require": {
+                "pantheon/pantheon-decoupled": "*",
+                "wpackagist-plugin/wp-gatsby": "^2.0"
+            },
+            "type": "library",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Perry",
+                    "email": "brian.perry@pantheon.io"
+                }
+            ],
+            "description": "Configuration necessary for using WordPress with Gatsby on Pantheon.",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "phpoption/phpoption",
@@ -1478,6 +1531,42 @@
                 }
             ],
             "time": "2021-01-20T15:23:13+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/wp-gatsby",
+            "version": "2.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-gatsby/",
+                "reference": "tags/2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-gatsby.2.0.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-gatsby/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-graphql",
+            "version": "1.6.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-graphql/",
+                "reference": "tags/1.6.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-graphql.1.6.7.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-graphql/"
         }
     ],
     "packages-dev": [
@@ -7173,6 +7262,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "pantheon/pantheon-decoupled-gatsby": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
