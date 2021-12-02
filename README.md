@@ -36,5 +36,5 @@ Additional details on configuring the Pantheon Lando recipe can be found in the 
 After starting up your local development environment, note the Edge URLs for your site. With your Lando environment up and running, you can either navigate to the site in your browser to install, or use the following command:
 
 ```
-lando wp core install --url=decoupled-wordpress-demo.lndo.site --title=Example --admin_user=supervisor --admin_password=strongpassword --admin_email=info@example.com
+lando wp core install --url=your-edge-url.lndo.site --title=Example --admin_user=supervisor --admin_password=strongpassword --admin_email=info@example.com
 ```
