@@ -1,5 +1,5 @@
 {
-  "name": "lcatlett/wordpress-decoupled",
+  "name": "lcatlett/decoupled-wordpress-project",
   "description": "Decoupled WordPress core, powered by Bedrock, on Pantheon.",
   "type": "project",
   "license": "MIT",
