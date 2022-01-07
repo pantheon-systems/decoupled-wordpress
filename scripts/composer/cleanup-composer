@@ -52,14 +52,14 @@ function copy_files() {
   # Copy the decoupled package.
   if [ ! -f "web/wp-content/mu-plugins/pantheon-decoupled" ]; then
     echo "📂 💨  Copying pantheon decoupled package..."
-    cp -v vendor/pantheon-systems/pantheon-decoupled web/wp-content/mu-plugins/
+    cp -r -v vendor/pantheon/pantheon-decoupled web/wp-content/mu-plugins/
     echo "✅ Done!"
   fi
 
   # Copy the decoupled gatsby package.
   if [ ! -f "web/wp-content/mu-plugins/pantheon-decoupled-gatsby" ]; then
     echo "📂 💨  Copying pantheon decoupled gatsby package.."
-    cp -v vendor/pantheon-systems/pantheon-decoupled-gatsby web/wp-content/mu-plugins/
+    cp -r -v vendor/pantheon/pantheon-decoupled-gatsby web/wp-content/mu-plugins/
     echo "✅ Done!"
   fi
 
