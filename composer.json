@@ -112,9 +112,7 @@
     "code-sniff": [
       "./vendor/bin/phpcs --standard=WordPress ./web/wp-content"
     ],
-    "unit-test": [
-      "./vendor/bin/phpunit tests/unit/*"
-    ],
+    "unit-test": "echo 'No unit test step defined.'",
     "lint": "find web/wp-content -name '*.php' -exec php -l {} \\;"
   }
 }
