@@ -65,6 +65,9 @@ function copy_files() {
 
   # Copy mu-plugins from Bedrock.
   copy_bedrock_muplugins
+
+ # Generate lando config.
+  setup_lando
 }
 
 #
@@ -86,6 +89,20 @@ function copy_bedrock_muplugins() {
       cp -v vendor/roots/bedrock/web/app/mu-plugins/register-theme-directory.php web/wp-content/mu-plugins/
     fi
 
+    echo "✅ Done!"
+  fi
+}
+
+#
+# Setup local devleopment environment.
+#
+function setup_lando() {
+  # Check for any of the bedrock mu-plugins.
+  if [[
+      ( ! -f "template.lando.yml" )
+  ]]; then
+    echo "📂 💨  Generating Lando configuration file..."
+      terminus lando:setup
     echo "✅ Done!"
   fi
 }
