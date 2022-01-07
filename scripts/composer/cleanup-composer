@@ -66,8 +66,6 @@ function copy_files() {
   # Copy mu-plugins from Bedrock.
   copy_bedrock_muplugins
 
- # Generate lando config.
-  setup_lando
 }
 
 #
@@ -97,7 +95,7 @@ function copy_bedrock_muplugins() {
 # Setup local devleopment environment.
 #
 function setup_lando() {
-  # Check for any of the bedrock mu-plugins.
+  # Check for template files.
   if [[
       ( ! -f "template.lando.yml" )
   ]]; then
@@ -124,4 +122,5 @@ function remove_files() {
 }
 
 copy_files
+setup_lando
 remove_files
