@@ -49,6 +49,20 @@ function copy_files() {
     echo "✅ Done!"
   fi
 
+  # Copy the decoupled package.
+  if [ ! -f "web/wp-content/mu-plugins/pantheon-decoupled" ]; then
+    echo "📂 💨  Copying pantheon decoupled package..."
+    cp -v vendor/pantheon-systems/pantheon-decoupled web/wp-content/mu-plugins/
+    echo "✅ Done!"
+  fi
+
+  # Copy the decoupled gatsby package.
+  if [ ! -f "web/wp-content/mu-plugins/pantheon-decoupled-gatsby" ]; then
+    echo "📂 💨  Copying pantheon decoupled gatsby package.."
+    cp -v vendor/pantheon-systems/pantheon-decoupled-gatsby web/wp-content/mu-plugins/
+    echo "✅ Done!"
+  fi
+
   # Copy mu-plugins from Bedrock.
   copy_bedrock_muplugins
 }
