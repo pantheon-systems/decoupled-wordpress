@@ -19,6 +19,8 @@ $mu_plugins = [
 	'pantheon-advanced-page-cache/pantheon-advanced-page-cache.php',
 	'pantheon-wp-muplugin/pantheon.php',
 	'wp-native-php-sessions/pantheon-sessions.php',
+	'pantheon-decoupled/pantheon-decoupled.php',
+	'pantheon-decoupled-gatsby/pantheon-decoupled-gatsby.php'
 ];
 
 foreach ( $mu_plugins as $file ) {
