@@ -95,9 +95,9 @@ function copy_bedrock_muplugins() {
 # Setup local devleopment environment.
 #
 function setup_lando() {
-  # Check for template files.
+  # Check for existing lando config file.
   if [[
-      ( ! -f "template.lando.yml" )
+      ( ! -f ".lando.yml" )
   ]]; then
     echo "📂 💨  Generating Lando configuration file..."
       terminus lando:setup
