@@ -1,5 +1,3 @@
-%SITE_NAME% on Pantheon
-
 This repository is a reference implementation and start state for a modern decoupled WordPress workflow utilizing [Composer](https://getcomposer.org/), Continuous Integration (CI), Automated Testing, and Pantheon. It uses CircleCI for continuous integration and includes sane defaults for an enterprise Wordpress site. This includes default settings, utility plugins with default configuration, environment-specific configuration via Roots Config, Quicksilver automation scripts, local development tooling, and basic tests.
 
 ## Quickstart

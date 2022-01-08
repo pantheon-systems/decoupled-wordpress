@@ -119,6 +119,18 @@ function remove_files() {
     rm -rfv ./web/wp/wp-content
     echo "✅ Done!"
   fi
+
+    # Remove any unneeded build tools generated files.
+
+  if [[
+      ( -d "web/modules" ) ||
+      ( -d "web/themes" )
+  ]]; then
+    echo "🗑 💥 Removing unneeded build tools generated files from install..."
+    rm -rfv ./web/modules
+    rm -rfv ./web/themes
+    echo "✅ Done!"
+  fi
 }
 
 copy_files
