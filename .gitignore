@@ -35,6 +35,9 @@ web/private/scripts/quicksilver
 !web/private/config/
 !.circleci
 .bashrc
+web/modules/
+web/themes/
+phpcs.xml
 
 # Add directories containing build assets below.
 # Keep all additions above the "cut" line.
@@ -67,8 +70,8 @@ web/wp-content/advanced-cache.php
 web/wp-content/wp-cache-config.php
 web/sitemap.xml
 web/sitemap.xml.gz
-web/custom/modules/
-web/custom/themes/
+web/modules/
+web/themes/
 *.log
 
 # @TODO writable paths

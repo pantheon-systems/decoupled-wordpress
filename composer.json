@@ -113,6 +113,6 @@
       "./vendor/bin/phpcs --standard=WordPress ./web/wp-content"
     ],
     "unit-test": "echo 'No unit test step defined.'",
-    "lint": "find web/wp-content -name '*.php' -exec php -l {} \\;"
+    "lint": "find web/wp-content/*/custom -name '*.php' -exec php -l {} \\;"
   }
 }
