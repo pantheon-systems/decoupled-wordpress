@@ -102,6 +102,7 @@
       "WordPressProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "post-update-cmd": [
+      "git init",
       "@cleanup",
       "WordPressProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
