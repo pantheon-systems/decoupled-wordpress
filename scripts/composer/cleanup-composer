@@ -12,6 +12,7 @@ function copy_files() {
   if [ ! -f "web/wp-content/mu-plugins/pantheon-decoupled" ]; then
     echo "📂 💨  Copying pantheon decoupled package..."
     cp -r -v vendor/pantheon-systems/pantheon-decoupled web/wp-content/mu-plugins/
+    cp -v vendor/pantheon-systems/pantheon-decoupled/pantheon-decoupled.php web/wp-content/mu-plugins/
     echo "✅ Done!"
   fi
 
@@ -19,6 +20,7 @@ function copy_files() {
   if [ ! -f "web/wp-content/mu-plugins/pantheon-decoupled-gatsby" ]; then
     echo "📂 💨  Copying pantheon decoupled gatsby package.."
     cp -r -v vendor/pantheon-systems/pantheon-decoupled-gatsby web/wp-content/mu-plugins/
+    cp -v vendor/pantheon-systems/pantheon-decoupled-gatsby/pantheon-decoupled-gatsby.php web/wp-content/mu-plugins/
     echo "✅ Done!"
   fi
 

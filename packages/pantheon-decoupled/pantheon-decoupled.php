@@ -3,11 +3,11 @@
  * Plugin Name:     Pantheon Decoupled
  * Plugin URI:      https://pantheon.io/
  * Description:     Configuration necessary for hosting Decoupled WordPress sites on Pantheon.
+ * Version:         0.1.0
  * Author:          Pantheon
  * Author URI:      https://pantheon.io/
  * Text Domain:     pantheon-decoupled
  * Domain Path:     /languages
- * Version:         0.1.0
  *
  * @package         Pantheon_Decoupled
  */

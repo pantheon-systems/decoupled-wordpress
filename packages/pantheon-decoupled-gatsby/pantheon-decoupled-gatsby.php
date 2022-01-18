@@ -3,11 +3,11 @@
  * Plugin Name:     Pantheon Decoupled Gatsby
  * Plugin URI:      https://pantheon.io/
  * Description:     Configuration necessary for using WordPress with Gatsby on Pantheon.
+ * Version:         0.1.0
  * Author:          Pantheon
  * Author URI:      https://pantheon.io/
  * Text Domain:     pantheon-decoupled-gatsby
  * Domain Path:     /languages
- * Version:         0.1.0
  *
  * @package         Pantheon_Decoupled
  */
