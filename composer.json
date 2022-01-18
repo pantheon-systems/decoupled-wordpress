@@ -27,8 +27,8 @@
     "pantheon-systems/quicksilver-pushback": "^2",
     "pantheon-systems/wordpress-integrations": "*",
     "pantheon-upstreams/upstream-configuration": "*",
-    "pantheon/pantheon-decoupled": "*",
-    "pantheon/pantheon-decoupled-gatsby": "*"
+    "pantheon-systems/pantheon-decoupled": "*",
+    "pantheon-systems/pantheon-decoupled-gatsby": "*"
   },
   "require-dev": {
     "behat/mink-goutte-driver": "^1.2.1",
@@ -66,8 +66,8 @@
         "wpackagist-plugin/lh-hsts",
         "wpackagist-plugin/pantheon-advanced-page-cache",
         "wpackagist-plugin/wp-native-php-sessions",
-        "pantheon/pantheon-decoupled",
-        "pantheon/pantheon-decoupled-gatsby"
+        "pantheon-systems/pantheon-decoupled",
+        "pantheon-systems/pantheon-decoupled-gatsby"
       ],
       "web/wp-content/plugins/{$name}/": [
         "type:wordpress-plugin"

@@ -1,5 +1,5 @@
 {
-    "name": "pantheon/pantheon-decoupled",
+    "name": "pantheon-systems/pantheon-decoupled",
     "description": "Configuration necessary for hosting Decoupled WordPress sites on Pantheon.",
     "require": {
         "wpackagist-plugin/wp-graphql": "^1.0"
