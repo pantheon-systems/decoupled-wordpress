@@ -1,6 +1,6 @@
 name: %SITE_NAME%
 recipe: pantheon
 config:
-  framework: wp
+  framework: wordpress
   site: %SITE_NAME%
 
