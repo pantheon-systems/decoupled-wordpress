@@ -4,3 +4,29 @@ config:
   framework: wordpress
   site: %SITE_NAME%
 
+proxy:
+  frontend:
+    - frontend.lndo.site:8000
+
+excludes:
+  - vendor
+  - node_modules
+
+services:
+  frontend:
+    type: node:14
+    build:
+      - "npm install --prefix ./frontend"
+    port: 8000
+
+tooling:
+  node:
+    service: frontend
+  npm:
+    service: frontend
+    cmd:
+      - "npm --prefix ./frontend"
+  yarn:
+    service: frontend
+    cmd:
+      - "yarn --cwd=/app/frontend"
