@@ -17,6 +17,8 @@ services:
     type: node:14
     build:
       - "npm install --prefix ./frontend"
+    build_as_root:
+      - apt-get update -y && apt-get install -y libvips
     port: 8000
 
 tooling:
