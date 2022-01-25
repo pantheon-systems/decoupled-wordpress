@@ -128,3 +128,19 @@ directly accept pull requests.
 Instead, to propose a change, please fork [pantheon-systems/decoupled-wordpress](https://github.com/pantheon-systems/decoupled-wordpress)
 and submit a PR to that repository.
 
+### Known Issues
+
+* When running Gatsby locally on an ARM based Mac using the NodeJS Lando Service,
+you may encounter errors related to the installing the Sharp Image Library. To
+resolve this issue, add the following to the `frontend` service in your
+`.lando.yml` file:
+
+```
+services:
+  frontend:
+    build_as_root:
+      - cd /tmp && wget https://github.com/libvips/libvips/releases/download/v8.11.4/vips-8.11.4.tar.gz && tar xf vips-8.11.4.tar.gz
+      - cd /tmp/vips-8.11.4 && ./configure && make && make install && ldconfig
+```
+
+This should install `libvps` which is required for the Sharp Image Library.
