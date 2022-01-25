@@ -2,7 +2,7 @@
     "name": "pantheon-systems/pantheon-decoupled-gatsby",
     "description": "Configuration necessary for using WordPress with Gatsby on Pantheon.",
     "require": {
-        "wpackagist-plugin/wp-gatsby": "^1.0",
+        "wpackagist-plugin/wp-gatsby": "^2.0",
         "pantheon-systems/pantheon-decoupled": "*"
     },
     "license": "GPLv3",
