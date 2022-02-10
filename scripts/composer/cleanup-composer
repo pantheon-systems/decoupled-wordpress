@@ -9,9 +9,9 @@ set -e
 function copy_files() {
 
     # Copy the decoupled package.
-  if [ ! -f "web/wp-content/mu-plugins/pantheon-decoupled" ]; then
+  if [ ! -f "web/wp-content/plugins/pantheon-decoupled" ]; then
     echo "📂 💨  Copying pantheon decoupled package..."
-    cp -r -v vendor/pantheon-systems/pantheon-decoupled web/wp-content/mu-plugins/
+    cp -r -v vendor/pantheon-systems/pantheon-decoupled web/wp-content/plugins/
     echo "✅ Done!"
   fi
 
