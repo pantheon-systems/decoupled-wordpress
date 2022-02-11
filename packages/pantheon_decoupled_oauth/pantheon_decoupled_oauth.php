@@ -59,11 +59,26 @@ function patheon_decoupled_oauth_create_consumer() {
 }
 
 /**
+ * Create example menu when activating the plugin.
+ */
+function pantheon_decoupled_oauth_example_menu() {
+	$menu = wp_get_nav_menu_object('Example Menu');
+	$menu_id = $menu ? $menu->term_id : wp_create_nav_menu('Example Menu');
+	wp_update_nav_menu_item($menu_id, 0, [
+		'menu-item-title' =>  __('Private Example Post'),
+		'menu-item-classes' => 'private_example_post',
+		'menu-item-url' => home_url( '/private-example-post/' ),
+		'menu-item-status' => 'private'
+	]);
+}
+
+/**
  * Activate the plugin.
  */
 function pantheon_decoupled_oauth_activate() {
 	activate_plugin( 'rest-api-oauth1/oauth-server.php' );
 	pantheon_decoupled_oauth_create_post();
+	pantheon_decoupled_oauth_example_menu();
 	patheon_decoupled_oauth_create_consumer();
 }
 register_activation_hook(__FILE__, 'pantheon_decoupled_oauth_activate');

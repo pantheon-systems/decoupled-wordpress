@@ -48,9 +48,23 @@ function pantheon_decoupled_example_create_post() {
 }
 
 /**
+ * Create example menu when activating the plugin.
+ */
+function pantheon_decoupled_example_menu() {
+	$menu = wp_get_nav_menu_object('Example Menu');
+	$menu_id = $menu ? $menu->term_id : wp_create_nav_menu('Example Menu');
+	wp_update_nav_menu_item($menu_id, 0, array(
+		'menu-item-title' =>  __('Example Post with Image'),
+		'menu-item-classes' => 'example_post_with_image',
+		'menu-item-url' => home_url( '/example-post-with-image/' ),
+		'menu-item-status' => 'publish'));
+}
+
+/**
  * Activate the plugin.
  */
 function pantheon_decoupled_example_activate() {
-    pantheon_decoupled_example_create_post();
+	pantheon_decoupled_example_create_post();
+	pantheon_decoupled_example_menu();
 }
 register_activation_hook(__FILE__, 'pantheon_decoupled_example_activate');
