@@ -17,18 +17,26 @@
       "type": "path",
       "url": "packages/*",
       "symlink": true
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/pantheon-systems/wp-pantheon-decoupled.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/pantheon-systems/wp-pantheon-decoupled-gatsby.git"
     }
   ],
   "require": {
     "php": ">=7.1",
     "composer/installers": "^1.11",
-    "vlucas/phpdotenv": "^5.3",
     "oscarotero/env": "^2.1",
+    "pantheon-systems/pantheon-decoupled": "dev-main",
+    "pantheon-systems/pantheon-decoupled-gatsby": "dev-main",
     "pantheon-systems/quicksilver-pushback": "^2",
     "pantheon-systems/wordpress-integrations": "*",
     "pantheon-upstreams/upstream-configuration": "*",
-    "pantheon-systems/pantheon-decoupled": "*",
-    "pantheon-systems/pantheon-decoupled-gatsby": "*"
+    "vlucas/phpdotenv": "^5.3"
   },
   "require-dev": {
     "behat/mink-goutte-driver": "^1.2.1",
@@ -65,9 +73,7 @@
         "type:wordpress-muplugin",
         "wpackagist-plugin/lh-hsts",
         "wpackagist-plugin/pantheon-advanced-page-cache",
-        "wpackagist-plugin/wp-native-php-sessions",
-        "pantheon-systems/pantheon-decoupled",
-        "pantheon-systems/pantheon-decoupled-gatsby"
+        "wpackagist-plugin/wp-native-php-sessions"
       ],
       "web/wp-content/plugins/{$name}/": [
         "type:wordpress-plugin"
