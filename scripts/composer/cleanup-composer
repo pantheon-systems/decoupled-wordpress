@@ -8,20 +8,6 @@ set -e
 #
 function copy_files() {
 
-    # Copy the decoupled package.
-  if [ ! -f "web/wp-content/plugins/pantheon-decoupled" ]; then
-    echo "📂 💨  Copying pantheon decoupled package..."
-    cp -r -v vendor/pantheon-systems/pantheon-decoupled web/wp-content/plugins/
-    echo "✅ Done!"
-  fi
-
-  # Copy the decoupled gatsby package.
-  if [ ! -f "web/wp-content/mu-plugins/pantheon-decoupled-gatsby" ]; then
-    echo "📂 💨  Copying pantheon decoupled gatsby package.."
-    cp -r -v vendor/pantheon-systems/pantheon-decoupled-gatsby web/wp-content/mu-plugins/
-    echo "✅ Done!"
-  fi
-
   # Copy the mu-plugins loader file.
   if [ ! -f "web/wp-content/mu-plugins/loader.php" ]; then
     echo "📂 💨  Copying the mu-plugins loader file..."
