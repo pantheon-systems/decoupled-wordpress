@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     Pantheon Decoupled oAuth
+ * Plugin Name:     Pantheon Decoupled Auth example
  * Plugin URI:      https://pantheon.io/
  * Description:     Example Application & content to demonstrate sourcing content from a Decoupled WordPress site using Application Passwords.
  * Author:          Pantheon
@@ -15,7 +15,7 @@
 /**
  * Create a private post when activating the plugin.
  */
-function pantheon_decoupled_oauth_create_post() {
+function pantheon_decoupled_auth_example_create_post() {
     $image_url = dirname(__FILE__) . '/chocolate-brownies.jpeg';
     $upload_dir = wp_upload_dir();
     $image_data = file_get_contents($image_url);
@@ -50,28 +50,25 @@ function pantheon_decoupled_oauth_create_post() {
 /**
  * Create example application password.
  */
-function pantheon_decoupled_oauth_create_application_password() {
-    $app_password = \WP_Application_Passwords::create_new_application_password('1', ['name' => 'Example Application']);
+function pantheon_decoupled_auth_example_create_application_password() {
+    \WP_Application_Passwords::create_new_application_password('1', ['name' => 'Example Application']);
 }
 
 /**
  * Show the Example App password.
  */
 function app_password_admin_notice() {
-    global $pagenow;
     $app_password = \WP_Application_Passwords::get_user_application_passwords('1');
-    if ( $pagenow == 'profile.php' ) {
-        echo '<div class="notice notice-warning is-dismissible">
+    echo '<div class="notice notice-info is-dismissible">
              <p>The password of the Example Application is:</p>
              ' . \WP_Application_Passwords::chunk_password($app_password[0]['password']) . '
          </div>';
-    }
 }
 
 /**
  * Create example menu when activating the plugin.
  */
-function pantheon_decoupled_oauth_example_menu() {
+function pantheon_decoupled_auth_example_menu() {
     $menu = wp_get_nav_menu_object('Example Menu');
     $menu_id = $menu ? $menu->term_id : wp_create_nav_menu('Example Menu');
     wp_update_nav_menu_item($menu_id, 0, [
@@ -85,10 +82,10 @@ function pantheon_decoupled_oauth_example_menu() {
 /**
  * Activate the plugin.
  */
-function pantheon_decoupled_oauth_activate() {
-    pantheon_decoupled_oauth_create_post();
-    pantheon_decoupled_oauth_example_menu();
-    pantheon_decoupled_oauth_create_application_password();
+function pantheon_decoupled_auth_example_activate() {
+    pantheon_decoupled_auth_example_create_post();
+    pantheon_decoupled_auth_example_menu();
+    pantheon_decoupled_auth_example_create_application_password();
 }
 add_action('admin_notices', 'app_password_admin_notice');
-register_activation_hook(__FILE__, 'pantheon_decoupled_oauth_activate');
+register_activation_hook(__FILE__, 'pantheon_decoupled_auth_example_activate');

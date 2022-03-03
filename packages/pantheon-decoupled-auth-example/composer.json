@@ -1,5 +1,5 @@
 {
-  "name": "pantheon/pantheon_decoupled_oauth",
+  "name": "pantheon/pantheon-decoupled-auth-example",
   "description": "Configuration necessary for WP REST API - OAuth 1.0a Server plugin.",
   "license": "GPLv3",
   "authors": [
