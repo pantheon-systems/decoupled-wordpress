@@ -70,6 +70,9 @@ function pantheon_decoupled_oauth_example_menu() {
 		'menu-item-url' => home_url( '/private-example-post/' ),
 		'menu-item-status' => 'private'
 	]);
+    $menu_locations = get_nav_menu_locations();
+    $menu_locations['footer'] = $menu_id;
+    set_theme_mod( 'nav_menu_locations', $menu_locations );
 }
 
 /**
