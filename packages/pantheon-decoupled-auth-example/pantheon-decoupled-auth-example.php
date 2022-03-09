@@ -5,11 +5,11 @@
  * Description:     Example Application & content to demonstrate sourcing content from a Decoupled WordPress site using Application Passwords.
  * Author:          Pantheon
  * Author URI:      https://pantheon.io/
- * Text Domain:     pantheon-decoupled-oauth
+ * Text Domain:     pantheon_decoupled_auth_example
  * Domain Path:     /languages
  * Version:         0.1.0
  *
- * @package         Pantheon_Decoupled_oAuth
+ * @package         Pantheon_Decoupled_Auth_example
  */
 
 /**
@@ -52,6 +52,7 @@ function pantheon_decoupled_auth_example_create_post() {
  */
 function pantheon_decoupled_auth_example_create_application_password() {
     \WP_Application_Passwords::create_new_application_password('1', ['name' => 'Example Application']);
+    set_transient( 'application_password_created', true);
 }
 
 /**
@@ -59,10 +60,13 @@ function pantheon_decoupled_auth_example_create_application_password() {
  */
 function app_password_admin_notice() {
     $app_password = \WP_Application_Passwords::get_user_application_passwords('1');
-    echo '<div class="notice notice-info is-dismissible">
-             <p>The password of the Example Application is:</p>
+    if( get_transient( 'application_password_created' ) ) {
+        echo '<div class="notice notice-info is-dismissible">
+             <p>Pantheon Decoupled Auth Example - The password of the Example Application is:</p>
              ' . \WP_Application_Passwords::chunk_password($app_password[0]['password']) . '
          </div>';
+        delete_transient('application_password_created');
+    }
 }
 
 /**
@@ -77,6 +81,9 @@ function pantheon_decoupled_auth_example_menu() {
         'menu-item-url' => home_url( '/private-example-post/' ),
         'menu-item-status' => 'private'
     ]);
+    $menu_locations = get_nav_menu_locations();
+    $menu_locations['footer'] = $menu_id;
+    set_theme_mod( 'nav_menu_locations', $menu_locations );
 }
 
 /**
