@@ -25,6 +25,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/pantheon-systems/wp-pantheon-decoupled-gatsby.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/pantheon-systems/wp-pantheon-decoupled-auth-example.git"
     }
   ],
   "require": {
@@ -32,6 +36,7 @@
     "composer/installers": "^1.11",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-decoupled": "dev-main",
+    "pantheon-systems/pantheon-decoupled-auth-example": "dev-main",
     "pantheon-systems/pantheon-decoupled-gatsby": "dev-main",
     "pantheon-systems/quicksilver-pushback": "^2",
     "pantheon-systems/wordpress-integrations": "*",
