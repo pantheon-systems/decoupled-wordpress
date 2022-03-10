@@ -51,20 +51,27 @@ function pantheon_decoupled_auth_example_create_post() {
  * Create example application password.
  */
 function pantheon_decoupled_auth_example_create_application_password() {
-    \WP_Application_Passwords::create_new_application_password('1', ['name' => 'Example Application']);
-    set_transient( 'application_password_created', true);
+	$created = \WP_Application_Passwords::create_new_application_password('1', ['name' => 'Example Application']);
+    set_transient( 'application_password_created', $created[0]);
 }
 
 /**
  * Show the Example App password.
  */
 function app_password_admin_notice() {
-    $app_password = \WP_Application_Passwords::get_user_application_passwords('1');
     if( get_transient( 'application_password_created' ) ) {
-        echo '<div class="notice notice-info is-dismissible">
-             <p>Pantheon Decoupled Auth Example - The password of the Example Application is:</p>
-             ' . \WP_Application_Passwords::chunk_password($app_password[0]['password']) . '
-         </div>';
+		?>
+		    <div class="notice notice-success notice-alt below-h2">
+			    <strong>Pantheon Decoupled Auth Example</strong>
+			    <p class="application-password-display">
+				    <label for="new-application-password-value">
+					    The password of the <strong>Example Application</strong> is:
+				    </label>
+				    <input type="text" class="code" value="<?php printf(esc_attr( \WP_Application_Passwords::chunk_password(get_transient( 'application_password_created' )) )); ?>" />
+			    </p>
+			    <p><?php _e( 'Be sure to save this in a safe location. You will not be able to retrieve it.' ); ?></p>
+		    </div>
+		<?php
         delete_transient('application_password_created');
     }
 }
