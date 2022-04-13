@@ -2,7 +2,7 @@
   "name": "pantheon-systems/decoupled-wordpress",
   "description": "Decoupled WordPress core, powered by Bedrock, on Pantheon.",
   "type": "project",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "minimum-stability": "dev",
   "repositories": [
     {
