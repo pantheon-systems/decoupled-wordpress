@@ -263,7 +263,7 @@ workflows:
       #       - visual_regression_test
   deploy_public_upstream:
     jobs:
-      - deploy-public-upstream:
+      - deploy_public_upstream:
           filters:
             branches:
               only:
