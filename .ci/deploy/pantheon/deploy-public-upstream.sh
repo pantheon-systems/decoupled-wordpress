@@ -1,12 +1,11 @@
 #!/bin/bash
 # This script is pretty tailored to assuming it's running in the CircleCI environment / a fresh git clone.
-# It mirrors most commits from `pantheon-systems/decoupled-drupal:release` to `pantheon-systems/decoupled-drupal-recommended`.
+# It mirrors most commits from `pantheon-systems/decoupled-wordpress:release` to `pantheon-systems/decoupled-wordpress-recommended`.
 
 set -euo pipefail
 
 . .ci/deploy/pantheon/commit-type.sh
 
-git remote add origin "$CIRCLE_REPOSITORY_URL"
 git remote add public "$UPSTREAM_REPO_REMOTE_URL"
 git fetch public
 git checkout "${CIRCLE_BRANCH}"
